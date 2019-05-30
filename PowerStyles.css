@@ -1,0 +1,81 @@
+body {
+    background-color: rgb(180, 199, 231);
+    font-family: Veranda, Geneva, sans-serif;
+    color: rgb(32, 56, 100);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(218, 227, 243);
+    border: 1px solid rgb(47, 85, 151);
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    
+}
+
+.logo {
+    font-size: 42px;
+    text-align: center;
+
+}
+
+#header {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#subheader {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#text {
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#buttons {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.btn {
+    border-radius: 0;
+    height: 50px;
+    width: 150px;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(47, 85, 151);
+    
+}
+
+#form {
+    font-size: 18px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
+
