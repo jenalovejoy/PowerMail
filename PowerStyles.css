@@ -76,5 +76,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    
 }
+
+
+.column_header {
+    background-color: rgb(47, 85, 151); 
+    color: white;
+}
+
+
+
