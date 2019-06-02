@@ -4,7 +4,7 @@ body {
     color: rgb(32, 56, 100);
 }
 
-.container {
+body > .container {
     position: absolute;
     top: 50%;
     left: 50%;
