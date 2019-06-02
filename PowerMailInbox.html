@@ -17,147 +17,203 @@
 </head>
 <body>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class = "column align-self-center">
-            <div class="row" id="inbox-header ali">
-                <div class="logo">power<i><b>mail</b></i></div>
+    <div class="container d-inline-block" id="inbox-header">
+        <div class="logo mt-2">power<i><b>mail</b></i></div>   
+
+        <div class="row mt-4" id="nav-buttons">
+            <div class="col-3 justify-self-start">
+                <button type="button" class="nav-btn" id=""><a href="index.html"><i class="fas fa-folder"></i></a></button>
             </div>
-            <div class="row">
-                <div class="column align-self-start">
-                    a
-                </div>
-                <div class="column align-self-center">
-                    b
-                </div>
-                <div class="column align--end">
-                    c
-                </div>
+            <div class="col-6">
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-sync-alt"></i></a></button>
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="far fa-envelope"></i></a></button>
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-undo-alt"></i></a></button>
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-share"></i></a></button>
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-flag"></i></a></button>
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-heart"></i></a></button>
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-times"></i></a></button>
             </div>
-        </div>
-    </div>
-    <div class="row border-top border-dark">
-        <div class="col-2 pt-2"> 
-            <div id="inbox-body">
-                <div id="inbox-directory">
-                    Inbox <br>
-                    Trash  <br>
-                    ETC. <br>
-                </div>
-                <div id="inbox-messages">
-                        Messages
-                </div>
+            <div class="col-2">
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-power-off"></i></a></button>
+                <button type="button" class="nav-btn mr-4" id=""><a href="index.html"><i class="fas fa-cog"></i></a></button>
             </div>
-        </div>
-
-        <div class="col mt-3">
-            <!-- Email List -->
-            <div class="container-fluid pt-1" id="email_list">
-                <div class="row column_header border border-dark mb-3">
-                    <div class="col-4 py-1 border-right border-light">
-                        <div class="sender_column">From</div>
-                    </div>
-                    <div class="col py-1">
-                        <div class="subject_column">
-                            <div>
-                                Subject
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-2 py-1 border-right border-light">
-                        <div class="date_column">Date Received</div>
-                    </div>
-                    <div class="col-1 py-1">
-                        <div class="flag_column">Flag</div>
-                    </div>
-                </div>
-                
-                <div class="row list_header mb-2">
-                    <div class="font-weight-bold">Today</div>
-                </div>
-
-                <div class="row email border border-dark pt-1 pb-1 mb-3">
-                    <div class="col-4">
-                        <div class="sender_column">JohnDoe@gmail.com</div>
-                    </div>
-                    <div class="col">
-                        <div class="subject_column">
-                            <div>
-                                Lorem ipsum dolor sit amet
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="date_column">3:25 PM</div>
-                    </div>
-                    <div class="col-1">
-                        <div class="flag_column"><i class="far fa-flag"></i></div>
-                    </div>
-                </div>
-
-                <div class="row email border border-dark pt-1 pb-1 mb-3">
-                    <div class="col-4">
-                        <div class="sender_column">JohnDoe@gmail.com</div>
-                    </div>
-                    <div class="col-5">
-                        <div class="subject_column">
-                            <div>
-                                Lorem ipsum dolor sit amet
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="date_column">3:25 PM</div>
-                    </div>
-                    <div class="col-1">
-                        <div class="flag_column"><i class="far fa-flag"></i></div>
-                    </div>
-                </div>
-
-                <div class="row list_header mb-2">
-                    <div class="font-weight-bold">Yesterday</div>
-                </div>
-
-                <div class="row email border border-dark pt-1 pb-1 mb-3">
-                    <div class="col-4">
-                        <div class="sender_column">JohnDoe@gmail.com</div>
-                    </div>
-                    <div class="col">
-                        <div class="subject_column">
-                            <div>
-                                Lorem ipsum dolor sit amet
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="date_column">3:25 PM</div>
-                    </div>
-                    <div class="col-1">
-                        <div class="flag_column"><i class="far fa-flag"></i></div>
-                    </div>
-                </div>
-    
-                <div class="row email border border-dark pt-1 pb-1 mb-3">
-                    <div class="col-4">
-                        <div class="sender_column">JohnDoe@gmail.com</div>
-                    </div>
-                    <div class="col-5">
-                        <div class="subject_column">
-                            <div>
-                                Lorem ipsum dolor sit amet
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="date_column">3:25 PM</div>
-                    </div>
-                    <div class="col-1">
-                        <div class="flag_column"><i class="far fa-flag"></i></div>
-                    </div>
-                </div>
+            <div class="col-1 justify-self-end">
+                <button type="button" class="nav-btn" id=""><a href="index.html"><i class="fas fa-question-circle"></i></a></button>
             </div>
         </div>
     </div>
+    <div class="row mx-0" id="inbox-body">
+        <div class="col-2 pt-2" id="inbox-directory">
+            Inbox <br>
+            Trash  <br>
+            ETC. <br>
+        </div>
+        <!-- Email Message List -->
+        <div class="col pt-2 px-4 d-inline-block" id="inbox-messages">
+            <!-- Column Header -->
+            <div class="row column_header mb-2">
+                <div class="col-4 py-1 border-right border-light">
+                    <div class="sender_column">From</div>
+                </div>
+                <div class="col-5 py-1 border-right border-light">
+                    Subject
+                </div>
+                <div class="col-2 py-1 border-right border-light">
+                    Date Received
+                </div>
+                <div class="col-1 align--end py-1 ">
+                    Flag
+                </div>
+            </div>
 
+            <!-- Today -->
+            <div class="row list_header ml-1 mb-2">
+                <div class="font-weight-bold">Today</div>
+            </div>
+
+            <!-- Today's Emails -->
+            <div class="row email border border-dark pt-1 pb-1 mb-3">
+                <div class="col-4">
+                    <div class="sender_column">JohnDoe@gmail.com</div>
+                </div>
+                <div class="col-5">
+                    <div class="subject_column">
+                        <div>
+                            Lorem ipsum dolor sit
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="date_column">3:25 PM</div>
+                </div>
+                <div class="col-1">
+                    <div class="flag_column"><i class="far fa-flag"></i></div>
+                </div>
+            </div>
+            <div class="row email border border-dark pt-1 pb-1 mb-3">
+                <div class="col-4">
+                    <div class="sender_column">JohnDoe@gmail.com</div>
+                </div>
+                <div class="col-5">
+                    <div class="subject_column">
+                        <div>
+                            Lorem ipsum dolor sit
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="date_column">3:25 PM</div>
+                </div>
+                <div class="col-1">
+                    <div class="flag_column"><i class="far fa-flag"></i></div>
+                </div>
+            </div>
+            <div class="row email border border-dark pt-1 pb-1 mb-3">
+                <div class="col-4">
+                    <div class="sender_column">JohnDoe@gmail.com</div>
+                </div>
+                <div class="col-5">
+                    <div class="subject_column">
+                        <div>
+                            Lorem ipsum dolor sit
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="date_column">3:25 PM</div>
+                </div>
+                <div class="col-1">
+                    <div class="flag_column"><i class="far fa-flag"></i></div>
+                </div>
+            </div>
+
+            <div class="row ml-1 list_header mb-2">
+                <div class="font-weight-bold">Yesterday</div>
+            </div>
+
+            <!-- Today's Emails -->
+            <div class="row email border border-dark pt-1 pb-1 mb-3">
+                <div class="col-4">
+                    <div class="sender_column">JohnDoe@gmail.com</div>
+                </div>
+                <div class="col-5">
+                    <div class="subject_column">
+                        <div>
+                            Lorem ipsum dolor sit
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="date_column">3:25 PM</div>
+                </div>
+                <div class="col-1">
+                    <div class="flag_column"><i class="far fa-flag"></i></div>
+                </div>
+            </div>
+            <div class="row email border border-dark pt-1 pb-1 mb-3">
+                <div class="col-4">
+                    <div class="sender_column">JohnDoe@gmail.com</div>
+                </div>
+                <div class="col-5">
+                    <div class="subject_column">
+                        <div>
+                            Lorem ipsum dolor sit
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="date_column">3:25 PM</div>
+                </div>
+                <div class="col-1">
+                    <div class="flag_column"><i class="far fa-flag"></i></div>
+                </div>
+            </div>
+            <div class="row email border border-dark pt-1 pb-1 mb-3">
+                <div class="col-4">
+                    <div class="sender_column">JohnDoe@gmail.com</div>
+                </div>
+                <div class="col-5">
+                    <div class="subject_column">
+                        <div>
+                            Lorem ipsum dolor sit
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="date_column">3:25 PM</div>
+                </div>
+                <div class="col-1">
+                    <div class="flag_column"><i class="far fa-flag"></i></div>
+                </div>
+            </div>
+
+
+            <div class="row ml-1 list_header mb-2">
+                <div class="font-weight-bold">Last Week</div>
+            </div>
+
+            <!-- Week's Emails -->
+            <div class="row email border border-dark pt-1 pb-1 mb-3">
+                <div class="col-4">
+                    <div class="sender_column">JohnDoe@gmail.com</div>
+                </div>
+                <div class="col-5">
+                    <div class="subject_column">
+                        <div>
+                            Lorem ipsum dolor sit
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="date_column">3:25 PM</div>
+                </div>
+                <div class="col-1">
+                    <div class="flag_column"><i class="far fa-flag"></i></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
