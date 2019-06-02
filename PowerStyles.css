@@ -4,6 +4,10 @@ body {
     color: rgb(32, 56, 100);
 }
 
+a {
+    color: white;
+}
+
 .container {
     position: absolute;
     top: 50%;
@@ -11,9 +15,12 @@ body {
     transform: translate(-50%, -50%);
     background-color: rgb(218, 227, 243);
     border: 1px solid rgb(47, 85, 151);
-    width: 60%;
-    height: 50%;
+    width: 70%;
+    height: 70%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
     
 }
 
@@ -39,6 +46,34 @@ body {
     font-weight: bold;
 }
 
+#inbox-header {
+    border: 1px solid rgb(47, 85, 151);
+    height: 25%;
+
+}
+
+#inbox-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+
+#inbox-directory {
+    border: 1px solid rgb(47, 85, 151);
+    display: flex;
+    align-items: stretch;
+    width: 20%;
+    
+}
+
+#inbox-messages {
+    border: 1px solid rgb(47, 85, 151);
+    display: flex;
+    align-items: stretch;
+    width: 80%;
+}
 
 #text {
     font-size: 24px;
@@ -75,7 +110,6 @@ body {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-    
+    text-align: left;
 }
 
