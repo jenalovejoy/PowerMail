@@ -2,12 +2,24 @@ $(document).ready(function(){
 
     $("#LogInButton").click(function(event){
         var email = $("#usernameinput").val();
-        console.log(email);
-        if (validateEmail(email)){
-            window.location.href ="PowerMailInbox.html";
-        } else {
+        var password = $("#password").val();
+        console.log(password);
+        var flag = true;
+
+        if (!validateEmail(email) ){
+            flag = false;
             alert("Please enter a valid email");
+        } 
+
+        if (typeof(password) == "undefined" | password == ""){
+            alert("Please enter a password");
+            flag = false;
         }
+
+        if (flag){
+            window.location.href ="PowerMailInbox.html";
+        }
+
     });
 
     $("#RegisterButton").click(function(event){
@@ -17,8 +29,10 @@ $(document).ready(function(){
 
         if (!validateEmail(email)){
             alert("Please enter a valid email");
-        } else if (password != passwordConfirm) {
+        } else if (password != passwordConfirm ) {
             alert("Password and confirmed password must be the same");
+        } else if (typeof(password) == "undefined" | password == "") {
+            alert("Please enter a password");
         } else {
             window.location.href ="PowerMailInbox.html";
         }
