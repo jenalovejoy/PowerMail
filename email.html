@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dominic Luu">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- <link rel = "icon"
+    type = "image/png"
+    href = "./img/favicon.png"> -->
+    <title>MailFlow</title>
+
+    <!-- fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+
+    <!--  styles -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navbar_style.css">
+    <link rel="stylesheet" href="./css/searchbar_style.css">
+    <link rel="stylesheet" href="./css/email.css">
+    <link rel="stylesheet" href="./css/email_sidebar.css">
+
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+    <!-- normalize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+
+
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                // hide sidebar
+                $('#sidebar').removeClass('active');
+                // hide overlay
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                // open or close navbar
+                $('#sidebar').toggleClass('active');
+                // close dropdowns
+                $('.collapse.in').toggleClass('in');
+                // and also adjust aria-expanded attributes we use for the open/closed arrows
+                // in our CSS
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <!-- <div class="container-fluid" id="sidebar"> -->
+        <div id="sidebar">
+            <div class="row listHeader">
+                <div>Today</div>
+            </div> 
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                        mary.le@gmail.com
+                    </div>
+                    <div class="row" id="sender_email">
+                        Lorem ipsum lorem 
+                    </div>
+                </div>
+                <div id="date">
+                    5:35PM
+                </div>
+            </div> 
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    3:21 PM 
+                </div>
+            </div>
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    9:28 AM
+                </div>
+            </div>
+            <div class="row listHeader">
+                <div>Yesterday</div>
+            </div> 
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    8:47 PM
+                </div>
+            </div>
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    4:23 PM
+                </div>
+            </div>
+            <div class="row listHeader">
+                <div>Last Week</div>
+            </div> 
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    8 May
+                </div>
+            </div>
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    7 May
+                </div>
+            </div>
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    5 May
+                </div>
+            </div>
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    5 May
+                </div>
+            </div>
+            <div class="row listHeader">
+                <div>Last Month</div>
+            </div> 
+             <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    April 5
+                </div>
+            </div>
+             <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    April 5
+                </div>
+            </div> 
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    April 3 
+                </div>
+            </div> 
+            <div class="email row border-top mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        Hello World!
+                    </div>
+                </div>
+                <div id="date">
+                    April 1 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content -->
+    <div id="content">
+        <div class="navbar fixed-top navbar-default navbar-static-top pb-3">
+            <div>
+                <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="index.html" class="btn btn-dark" id="inbox_button"><i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+
+        <div id="email" class="container-fluid justify-content-center mt-3 pt-5">
+            <div id="header" class="row mb-2">
+                <img src="profile.jpg" id="profile_pic" class="rounded-circle mr-1" alt="profile picture column">
+                <div class="column ml-4" id="sender_column">
+                    <div class="row" id="sender_name">
+                       Mary Le 
+                    </div>
+                    <div class="row" id="sender_email">
+                        mary.le@gmail.com
+                    </div>
+                </div>
+                <div id="date">
+                    5 May 2019
+                </div>
+            </div>
+            <div id="subject_line">
+                SUBJECT LINE
+            </div>
+            <div id="body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                 in culpa qui officia deserunt mollit anim id est laborum.
+
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                 in culpa qui officia deserunt mollit anim id est laborum.
+                
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                 in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+
+        </div>
+        <div id="email_buttons" class="">
+            <button id="attachment_button" class="button">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            <button id="sendButton" class="button">
+                <i class="fas fa-paper-plane"></i> Reply 
+            </button>
+        </div>  
+    </div>
+</body>
+
+</html>
