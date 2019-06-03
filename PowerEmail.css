@@ -30,12 +30,12 @@ body > .container {
 
 }
 
-#header {
+/* #header {
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 #subheader {
     position: absolute;
@@ -45,18 +45,18 @@ body > .container {
     text-align: center;
     font-weight: bold;
 }
-
-#inbox-header {
+/* 
+#header {
     border: 1px solid rgb(47, 85, 151);
     height: 25%;
-}
+} */
 
 #inbox-body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    height: 75%;
+    height: 95%;
 }
 
 #inbox-directory {
@@ -116,7 +116,7 @@ body > .container {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: left;
+    text-align: center;
 }
 
 
@@ -127,5 +127,10 @@ body > .container {
     display: flex;
 }
 
+.email {
+    margin-right:-15px;
+    /* background-color: black; */
+    border-bottom: 1px solid rgb(47, 85, 151);
+}
 
 
