@@ -17,7 +17,23 @@ import React, { Component } from 'react';
 
 // }
 
+class RefreshBtn extends Component {
+    handleClick = () => {
+        this.props.refreshFunc();
+    }
+
+
+    render() {
+        return (
+            <button onClick={this.handleClick} type="button" className="nav-btn mr-3" id="">
+                <i className={this.props.icon}></i>
+            </button>
+        );
+    }
+}
+
 export class InboxHeader extends Component {
+
     render() {
         return (
             <div className="d-inline-block" id="inbox-header">
@@ -28,7 +44,7 @@ export class InboxHeader extends Component {
                         <button type="button" className="nav-btn" id=""><a href="index.html"><i className="fas fa-folder"></i></a></button>
                     </div>
                     <div className="col-6 col-lg-6">
-                        <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-sync-alt"></i></button>
+                        <RefreshBtn icon="fas fa-sync-alt" refreshFunc={this.props.refreshFunc} />
                         <button type="button" className="nav-btn mr-3" id=""><a href="ComposeEmail.html" style={{color: '#FFFFFF'}}><i className="far fa-envelope"></i></a></button>
                         <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-undo-alt"></i></button>
                         <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-share"></i></button>
@@ -74,7 +90,6 @@ export class InboxMessages extends Component {
     }
 
     render() {
-       console.log(this.props.emails);
        let emailRows = [];
        Object.keys(this.props.emails).forEach((id) => {
             // console.log(this.props.emails[id]['header'].from);
@@ -87,7 +102,7 @@ export class InboxMessages extends Component {
             />);
         });
  
-        console.log(emailRows)
+        // console.log(emailRows)
         return (
             <div className="col pt-2 px-4 d-inline-block" id="inbox-messages">
             {/* <!-- Column Header --> */}
@@ -142,8 +157,8 @@ class EmailRow extends Component {
         let subject = this.props.subject;
         let timeStamp = this.props.timeStamp;
 
-        console.log(sender);
-        console.log(timeStamp);
+        // console.log(sender);
+        // console.log(timeStamp);
 
         return(
             <div className="row email border border-dark pt-1 pb-1 mb-3">

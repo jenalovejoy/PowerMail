@@ -9,9 +9,16 @@ class App extends Component {
     super(props);
     this.state = {
       emails: {}
-    }
+    }  
+    
+
   }
+
   componentDidMount() {
+    this.updateEmails();
+  }
+    
+  updateEmails() {
     fetch('/imap?email=dn.luu03&host=gmail&auth=BellevueCS&num=6', {
       method: "GET",
       mode: "cors",
@@ -22,18 +29,20 @@ class App extends Component {
     .then(res => res.json())
       .then((data) => {
         this.setState({
-          emails: data
-        });
+        emails: data
       });
-  }
-//
+    });
+  };
+
+
+
 
   render() {
     // console.log(this.state.emails);
     return (
       <div className="container">
         {/* <Inbox />   */}
-        <InboxHeader />
+        <InboxHeader refreshFunc={this.updateEmails.bind(this)} />
         <InboxBody emails={this.state.emails} />
       </div>
     );
