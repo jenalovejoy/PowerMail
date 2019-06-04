@@ -58,19 +58,36 @@ export class InboxBody extends Component {
                     Trash <br />
                     ETC. <br />
                 </div>
-                <InboxMessages /> 
+                <InboxMessages emails={this.props.emails} /> 
             </div>
         );
     }
 }
 
 export class InboxMessages extends Component {
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
 
-    // }
+    }
+
+    componentDidMount() {
+    }
 
     render() {
+       console.log(this.props.emails);
+       let emailRows = [];
+       Object.keys(this.props.emails).forEach((id) => {
+            // console.log(this.props.emails[id]['header'].from);
+            // console.log(this.props.emails[id]['header'].subject);
+            // console.log(this.props.emails[id]['header'].date);
+            
+            emailRows.unshift( <EmailRow 
+                sender = { this.props.emails[id]['header'].from }
+                subject = { this.props.emails[id]['header'].subject }
+            />);
+        });
+ 
+        console.log(emailRows)
         return (
             <div className="col pt-2 px-4 d-inline-block" id="inbox-messages">
             {/* <!-- Column Header --> */}
@@ -88,31 +105,31 @@ export class InboxMessages extends Component {
                     Flag
                 </div>
             </div>
-
+            {emailRows}
             {/* <!-- Today --> */}
-            <div className="row list_header ml-1 mb-2">
+            {/* <div className="row list_header ml-1 mb-2">
                 <div className="font-weight-bold">Today</div>
-            </div>
+            </div> */}
 
             {/* <!-- Today's Emails --> */}
-            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
-            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="1:25 PM"/>
-            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="11:25 AM"/>
+            {/* <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
+            // <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="1:25 PM"/>
+            // <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="11:25 AM"/> */}
 
             {/* <!-- Yesterday's Emails --> */}
-            <div className="row ml-1 list_header mb-2">
+            {/* <div className="row ml-1 list_header mb-2">
                 <div className="font-weight-bold">Yesterday</div>
-            </div>
+            </div> */}
             
-            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
-            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
+            {/* <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
+            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/> */}
             
             {/* <!-- Week's Emails --> */}
-            <div className="row ml-1 list_header mb-2">
+            {/* <div className="row ml-1 list_header mb-2">
                 <div className="font-weight-bold">Last Week</div>
-            </div>
+            </div> */}
 
-            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
+            {/* <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/> */}
             {/* <EmailRow sender="JohnDoe@gmail.com" subject="Hello World" timeStamp="3:25 PM"/> */}
         </div>
         );
@@ -124,6 +141,9 @@ class EmailRow extends Component {
         let sender = this.props.sender;
         let subject = this.props.subject;
         let timeStamp = this.props.timeStamp;
+
+        console.log(sender);
+        console.log(timeStamp);
 
         return(
             <div className="row email border border-dark pt-1 pb-1 mb-3">
