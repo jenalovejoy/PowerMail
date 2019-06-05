@@ -37,7 +37,7 @@ class App extends Component {
   }
     
   updateEmails() {
-    fetch('/imap?email=dn.luu03&host=gmail&auth=BellevueCS&num=6', {
+    fetch('/imap?email=dn.luu03&host=gmail&auth=dkbt rrlq vvfl bztd&num=6', {
       method: "GET",
       mode: "cors",
       headers: {
