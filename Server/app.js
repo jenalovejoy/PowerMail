@@ -32,6 +32,7 @@ app.use('/', indexRouter);
 // });
 
 app.get('/imap', imapRouter); 
+app.post('/emails', emailRouter); 
 
 
 // catch 404 and forward to error handler

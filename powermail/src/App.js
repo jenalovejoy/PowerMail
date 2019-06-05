@@ -16,6 +16,24 @@ class App extends Component {
 
   componentDidMount() {
     this.updateEmails();
+    
+    var fetchBody = {email: 'dn.luu03'}
+
+    fetch('/emails', {
+      method: "POST",
+      body: fetchBody,
+      mode: "cors",
+      headers: {
+        "Content-Type": "text/html"
+      }
+    })
+   
+    .then(res => res.text())
+    
+    .then((data) => {
+      console.log("Data");
+      console.log(data);
+    });
   }
     
   updateEmails() {

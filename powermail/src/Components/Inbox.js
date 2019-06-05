@@ -120,12 +120,12 @@ export class InboxMessages extends Component {
                     Flag
                 </div>
             </div>
-            {emailRows}
             {/* <!-- Today --> */}
             {/* <div className="row list_header ml-1 mb-2">
                 <div className="font-weight-bold">Today</div>
             </div> */}
 
+            {emailRows}
             {/* <!-- Today's Emails --> */}
             {/* <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
             // <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="1:25 PM"/>

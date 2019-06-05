@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npmstart",
-    "server": "cd server && npm start",
-    "start": "concurrently - kill-others \"npm run server\" \"npm run client\""
+    "client": "cd powermail && npm start",
+    "server": "cd Server && npm start",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "3.5.1"
+    "concurrently": "^3.5.1"
   },
   "bugs": {
     "url": "https://github.com/jenalovejoy/PowerMail/issues"
   },
-  "homepage": "https://github.com/jenalovejoy/PowerMail#readme"
+  "homepage": "https://github.com/jenalovejoy/PowerMail#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
 }

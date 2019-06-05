@@ -79,26 +79,26 @@ router.get('/imap', function(req, res, next) {
                             }
                             // Regex to get everything between and including the first and last HTML tags
                             // Robust as fuck but still breaks on some weird cases
-                            let regex = /(quoted-printable(\s|\n)*)(<\/?([a-z0-9]|\W)*>(.|\n)*<\/?[a-z0-9]*>)/;
-                            let match = regex.exec(textStream);
+                            // let regex = /(quoted-printable(\s|\n)*)(<\/?([a-z0-9]|\W)*>(.|\n)*<\/?[a-z0-9]*>)/;
+                            // let match = regex.exec(textStream);
                         
                             // If RegEx returns not null (match is found)
-                            if (match) {
+                            // if (match) {
                                 // console.log("Match found");
-                                printOut = match[3];
-                            } else {
-                                regex = /(quoted-printable(\s|\n)*)?(<\/?([a-z0-9]|\W)*>(.|\n)*<\/?[a-z0-9]*>)/;
-                                match = regex.exec(textStream); 
-                                if (match) {
+                                // printOut = match[3];
+                            // } else {
+                                // regex = /(quoted-printable(\s|\n)*)?(<\/?([a-z0-9]|\W)*>(.|\n)*<\/?[a-z0-9]*>)/;
+                                // match = regex.exec(textStream); 
+                                // if (match) {
                                     // console.log("Match2 found");
-                                    printOut = match[3];
+                                    // printOut = match[3];
                                     // If there are no HTML tags found then just print the text
-                                } else {
-                                    printOut = textStream;
-                                }
-                            }
+                                // } else {
+                                    // printOut = textStream;
+                                // }
+                            // }
                             // email['body'] = printOut;
-                            email['body'] = "";
+                            email['body'] = textStream;
                         });
                     });
                 });
@@ -162,17 +162,6 @@ router.get('/imap', function(req, res, next) {
         // console.log();
         // console.log("printout");
         // console.log(printOut);
-        // console.log(emailList);
-        // console.log(emailList[8]['header']);
-        // for (var i = 1; i < emailId; i++) {
-        //     console.log(i);
-        //     if (emailList[i]['header']) {
-        //         console.log(emailList[5]['header']);
-        //         console.log();
-        //     } else {
-        //         console.log("undefined");
-        //     }
-        // }
 
         // Object.keys(emailList).forEach((id) => {
         //     console.log(id);

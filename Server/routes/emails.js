@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/emails', function(req, res, next) {
+router.post('/emails', function(req, res, next) {
+  const email = req.query;
+  console.log(email);
   res.send('respond');
 });
 
