@@ -10,9 +10,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var emailRouter = require('./routes/emails');
 var imapRouter = require('./routes/imap');
+var smtpRouter = require('./routes/smtp');
 
 var app = express();
-var router = express.Router();
 
 // Google OAuth API???
 
@@ -34,6 +34,8 @@ app.use('/', indexRouter);
 app.get('/imap', imapRouter); 
 app.post('/emails', emailRouter); 
 
+
+app.post('/smtp', smtpRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

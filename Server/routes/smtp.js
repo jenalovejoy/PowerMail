@@ -1,17 +1,23 @@
 const nodemailer = require("nodemailer");
-const fs = require('fs');
-const Express = require('express');
+// const fs = require('fs');
 
+const express = require('express');
+var router = express.Router();
 
 // SMTP
 // smtp.gmail.com
 // SSL Port: port 465
 // TLS/STARTTLS Port: port 587 
 
-router.get('/smtp', function(req, res, next) {
+router.post('/smtp', function(req, res, next) {
     const email = req.query.email + '@' + req.query.host + '.com';
     const pw = req.query.auth;
+    res.send('respond');
+    res.end();
+});
 
+
+function sendEmail(auth, msg) {
 
     // SMTP Auth
     let transporter = nodemailer.createTransport({
@@ -33,4 +39,7 @@ router.get('/smtp', function(req, res, next) {
     }
 
     // transporter.sendMail(emailMsg);
-});
+
+}
+
+module.exports = router;
