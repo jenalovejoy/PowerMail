@@ -55,17 +55,6 @@ body {
     text-align: left;
 }
 
-/*.flex-container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
-}
-
-.fill-width {
-    flex: 1;
-}*/
-
 .submissionfield { 
     width: 600px; 
     height: 20px; 
