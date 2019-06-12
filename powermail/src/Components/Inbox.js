@@ -1,22 +1,4 @@
 import React, { Component } from 'react';
-
-// export default class Inbox extends Component {
-//     constructor(props) {
-//         super(props);
-
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 <InboxHeader />
-//                 <InboxBody />
-//             </div>
-//         );
-//     }
-
-// }
-
 class RefreshBtn extends Component {
     handleClick = () => {
         this.props.refreshFunc();
@@ -182,3 +164,22 @@ class EmailRow extends Component {
         );
     } 
 }
+
+
+
+// export default class Inbox extends Component {
+//     constructor(props) {
+//         super(props);
+
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <InboxHeader />
+//                 <InboxBody />
+//             </div>
+//         );
+//     }
+// }
+
