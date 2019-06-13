@@ -4,6 +4,7 @@ import './css/ComposeStyle.css';
 import './css/PowerStyles.css';
 
 import { InboxHeader, InboxBody } from './Components/Inbox.js';
+import { LoginPage } from './Components/Login.js';
 
 class App extends Component {
   constructor(props) {
@@ -83,6 +84,13 @@ class App extends Component {
       );
     }
 
+    let renderLoginPage = () => {
+      return (
+        <LoginPage />
+
+      );
+    }
+
     // console.log(this.state.emails);
 
     return (
@@ -95,7 +103,8 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           {/* <Route path='/inbox' component={Inbox} /> */}
-          <Route exact path='/' render={renderInboxPage}/>
+          {/* <Route exact path='/' render={renderInboxPage}/> */}
+          <Route exact path='/' render={renderLoginPage}/>
         </Switch> 
       </BrowserRouter>
     );
