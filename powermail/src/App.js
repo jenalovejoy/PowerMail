@@ -1,10 +1,10 @@
 import  React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
-import './css/ComposeStyle.css';
 import './css/PowerStyles.css';
 
-import { InboxHeader, InboxBody } from './Components/Inbox.js';
+import { InboxPage } from './Components/Inbox.js';
 import { LoginPage } from './Components/Login.js';
+import { ComposePage } from './Components/Compose.js';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class App extends Component {
 
     // this.updateEmails();
 
-
+    this.logIn();
 
     // POST testing
     var fetchBody = {email: 'dn.luu03'}
@@ -47,18 +47,15 @@ class App extends Component {
       console.log("Data");
       console.log(data);
     });
-    .then((data) => {
-      console.log("Data");
-      console.log(data);
-    });
   }
 
-  // Firebase
   componentWillUnmount() {
+    // Firebase
     // this.authUnRegFunc();
   }
 
   updateEmails() {
+    console.log("updateEmails");
     fetch('/imap?email=dn.luu03&host=gmail&auth=dkbt rrlq vvfl bztd&num=6', {
       method: "GET",
       mode: "cors",
@@ -75,30 +72,40 @@ class App extends Component {
 
   };
 
+  logIn() {
+    this.setState({
+      loginStatus: true 
+    })
+  }
+
   render() {  
+    if (!this.state.loginStatus) {
+      return (
+        <LoginPage loginFunc={ this.logIn.bind(this) } />
+      );
+    }
+
     let renderInboxPage = () => {
+      // this.updateEmails();
       return (
-        <div className="container">
-          <InboxHeader refreshFunc={this.updateEmails.bind(this)}/>
-          <InboxBody emails={this.state.emails}/>
-        </div>
+        <InboxPage refreshFunc={ this.updateEmails.bind(this) }
+                    emails={ this.state.emails } />
       );
     }
 
-    let renderLoginPage = () => {
+    let renderComposePage = () => {
+      // this.updateEmails();
       return (
-        <LoginPage />
-
+        <ComposePage />
       );
     }
-
-
+ 
     return (
       <BrowserRouter>
         <Switch>
           {/* <Route path='/inbox' component={Inbox} /> */}
-          {/* <Route exact path='/' render={renderInboxPage}/> */}
-          <Route exact path='/' render={renderLoginPage}/>
+          <Route exact path='/' render={renderInboxPage}/>
+          <Route path='/compose' render={renderComposePage}/>
         </Switch> 
       </BrowserRouter>
     );

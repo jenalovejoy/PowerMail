@@ -27,8 +27,7 @@ export class LoginPage extends Component {
                 </div>
                 <div id="buttons" class="row align-items-center justify-content-center">
                     <div class="col"><button type="button" class="btn" id="GoBackButton"><a href="index.html">Go back</a></button></div>
-                    <div class="col"><button type="button" class="btn" id="LogInButton">Log in</button></div>
-                    <div class="col"><LoginButton /></div>
+                    <div class="col"><LoginButton loginFunc={this.props.loginFunc} /></div>
                 </div>
             </div>
         );
@@ -37,6 +36,7 @@ export class LoginPage extends Component {
 
 class LoginButton extends Component {
     handleClick = () => {
+        this.props.loginFunc();
     }
 
 

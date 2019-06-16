@@ -1,4 +1,21 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+
+export class InboxPage extends Component {
+    componentDidMount() {
+        this.props.refreshFunc();
+    }
+    render() {
+        return(
+            <div className="container">
+                <InboxHeader refreshFunc={ this.props.refreshFunc } />
+                <InboxBody emails={this.props.emails}/>
+            </div>
+        );
+    }
+}
+
+
 class RefreshBtn extends Component {
     handleClick = () => {
         this.props.refreshFunc();
@@ -14,7 +31,7 @@ class RefreshBtn extends Component {
     }
 }
 
-export class InboxHeader extends Component {
+class InboxHeader extends Component {
 
     render() {
         return (
@@ -27,7 +44,7 @@ export class InboxHeader extends Component {
                     </div>
                     <div className="col-6 col-lg-6">
                         <RefreshBtn icon="fas fa-sync-alt" refreshFunc={this.props.refreshFunc} />
-                        <button type="button" className="nav-btn mr-3" id=""><a href="ComposeEmail.html" style={{color: '#FFFFFF'}}><i className="far fa-envelope"></i></a></button>
+                        <NavLink to='/compose'><button type="button" className="nav-btn mr-3"><i className="far fa-envelope"></i></button></NavLink>
                         <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-undo-alt"></i></button>
                         <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-share"></i></button>
                         <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-flag"></i></button>
@@ -47,7 +64,11 @@ export class InboxHeader extends Component {
     }
 }
 
-export class InboxBody extends Component {
+class InboxBody extends Component {
+    componentDidMount() {
+
+    }
+
     render() {
         return( 
             <div className="row mx-0" id="inbox-body">
@@ -62,7 +83,7 @@ export class InboxBody extends Component {
     }
 }
 
-export class InboxMessages extends Component {
+class InboxMessages extends Component {
     constructor(props) {
         super(props);
 
