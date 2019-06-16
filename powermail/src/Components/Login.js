@@ -28,8 +28,36 @@ export class LoginPage extends Component {
                 <div id="buttons" class="row align-items-center justify-content-center">
                     <div class="col"><button type="button" class="btn" id="GoBackButton"><a href="index.html">Go back</a></button></div>
                     <div class="col"><button type="button" class="btn" id="LogInButton">Log in</button></div>
+                    <div class="col"><LoginButton /></div>
                 </div>
             </div>
         );
     }
 }
+
+class LoginButton extends Component {
+    handleClick = () => {
+    }
+
+
+    render() {
+        return (
+            <button onClick={this.handleClick} type="button" class="btn" id="LogInButton">Log in</button>
+        );
+    }
+}
+
+
+// class RegisterButton extends Component {
+//     handleClick = () => {
+//     }
+
+
+//     render() {
+//         return (
+//             <button onClick={this.handleClick} type="button" className="nav-btn mr-3" id="">
+//                 <i className={this.props.icon}></i>
+//             </button>
+//         );
+//     }
+// }

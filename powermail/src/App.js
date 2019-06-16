@@ -25,9 +25,7 @@ class App extends Component {
     //   }
     // })
 
-
-
-    this.updateEmails();
+    // this.updateEmails();
 
 
 
@@ -49,13 +47,16 @@ class App extends Component {
       console.log("Data");
       console.log(data);
     });
+    .then((data) => {
+      console.log("Data");
+      console.log(data);
+    });
   }
 
   // Firebase
   componentWillUnmount() {
     // this.authUnRegFunc();
   }
-
 
   updateEmails() {
     fetch('/imap?email=dn.luu03&host=gmail&auth=dkbt rrlq vvfl bztd&num=6', {
@@ -91,15 +92,8 @@ class App extends Component {
       );
     }
 
-    // console.log(this.state.emails);
 
     return (
-      // <div className="container">
-      //   {/* <Inbox />   */}
-      //   <InboxHeader refreshFunc={this.updateEmails.bind(this)} />
-      //   <InboxBody emails={this.state.emails} />
-      // </div>
-
       <BrowserRouter>
         <Switch>
           {/* <Route path='/inbox' component={Inbox} /> */}

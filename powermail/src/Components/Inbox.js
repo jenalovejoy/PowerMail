@@ -74,17 +74,12 @@ export class InboxMessages extends Component {
     render() {
        let emailRows = [];
        Object.keys(this.props.emails).forEach((id) => {
-            // console.log(this.props.emails[id]['header'].from);
-            // console.log(this.props.emails[id]['header'].subject);
-            // console.log(this.props.emails[id]['header'].date);
-            
             emailRows.unshift( <EmailRow 
                 sender = { this.props.emails[id]['header'].from }
                 subject = { this.props.emails[id]['header'].subject }
             />);
         });
  
-        // console.log(emailRows)
         return (
             <div className="col pt-2 px-4 d-inline-block" id="inbox-messages">
             {/* <!-- Column Header --> */}
