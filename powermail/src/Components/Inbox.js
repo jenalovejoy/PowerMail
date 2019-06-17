@@ -78,14 +78,6 @@ class InboxBody extends Component {
 }
 
 class InboxMessages extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
-    componentDidMount() {
-    }
-
     render() {
        let emailRows = [];
        Object.keys(this.props.emails).forEach((id) => {
@@ -145,43 +137,28 @@ class EmailRow extends Component {
         // console.log(timeStamp);
 
         return(
-            <div className="row email border border-dark pt-1 pb-1 mb-3">
-                <div className="col-4">
-                    <div className="sender_column">{sender}</div>
-                </div>
-                <div className="col-5">
-                    <div className="subject_column">
-                        <div>
-                            {subject}
-                        </div> 
+            <NavLink exact to='/email' style={{textDecoration: 'none', color: 'black'}}>
+                <div className="row email border border-dark pt-1 pb-1 mb-3">
+                    <div className="col-4">
+                        <div className="sender_column">{sender}</div>
                     </div>
-                </div>
-                <div className="col-2">
-                    <div className="date_column"> {timeStamp} </div>
-                </div>
-                <div className="col-1">
-                    <div className="flag_column"><i className="far fa-flag"></i></div>
-                </div>
-            </div>  
-        );
+                    <div className="col-5">
+                        <div className="subject_column">
+                            <div>
+                                {subject}
+                            </div> 
+                        </div>
+                    </div>
+                    <div className="col-2">
+                        <div className="date_column"> {timeStamp} </div>
+                    </div>
+                    <div className="col-1">
+                        <div className="flag_column"><i className="far fa-flag"></i></div>
+                    </div>
+                </div>  
+            </NavLink> 
+       );
     } 
 }
 
-
-
-// export default class Inbox extends Component {
-//     constructor(props) {
-//         super(props);
-
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 <InboxHeader />
-//                 <InboxBody />
-//             </div>
-//         );
-//     }
-// }
 
