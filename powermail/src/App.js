@@ -1,5 +1,4 @@
 import  React, { Component } from 'react';
-// import { BrowserRouter, Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './css/PowerStyles.css';
 
@@ -8,6 +7,7 @@ import { WelcomePage } from './Components/Welcome.js';
 import { LoginPage } from './Components/Login.js';
 import { RegisterPage } from './Components/Register.js';
 import { ComposePage } from './Components/Compose.js';
+import { EmailPage } from './Components/ReadEmail.js';
 import { SettingsPreferencePage } from './Components/Settings_Preferences.js';
 import { SettingsUserPage } from './Components/Settings_User.js';
 import { SettingsAccountsPage } from './Components/Settings_Accounts.js';
@@ -22,6 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.logIn();
     // this.updateEmails();
   }
 
@@ -108,12 +109,17 @@ class App extends Component {
     let renderSettingsUsers = () => {
         return(<SettingsUserPage />);
     }
+
+    let renderEmailPage = () => {
+      return(<EmailPage />);
+    }
     
     return (
       <BrowserRouter>
-        <Switch>
+        <Switch>gg
           <Route exact path='/' render={renderInboxPage}/>
           <Route path='/compose' render={renderComposePage}/>
+          <Route path='/email' render={renderEmailPage}/>
           <Route path='/settings/preferences/' render={renderSettingsPreferences}/>
           <Route path='/settings/accounts/' render={renderSettingsAccounts}/>
           <Route path='/settings/user/' render={renderSettingsUsers}/>

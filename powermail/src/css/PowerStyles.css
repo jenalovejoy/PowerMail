@@ -129,5 +129,8 @@ body > .container {
     display: flex;
 }
 
+NavLink {
+    color: black;
+}
 
 
