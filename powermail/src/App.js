@@ -22,17 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // Firebase stuff
-    // this.authUnRegFunc = firebase.auth().onAuthStateChanged((firebaseUser) => {
-    //   if (firebaseUser) {
-    //     this.setState({ user: firebaseUser});
-    //   } else {
-    //     this.setState({ user: null });
-    //   }
-    // })
-
     // this.updateEmails();
-
   }
 
 
@@ -45,8 +35,9 @@ class App extends Component {
         "Content-Type": "text/html"
       }
     })
-    .then(res => res.json())
+    .then(res => res.json()) 
       .then((data) => {
+        console.log(data);
         this.setState({
         emails: data
       });
