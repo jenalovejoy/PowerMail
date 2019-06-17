@@ -53,7 +53,7 @@ class InboxHeader extends Component {
                     </div>
                     <div className="col-2 col-lg-3">
                         <button type="button" className="nav-btn mr-3" id=""><a href="index.html"><i className="fas fa-power-off"></i></a></button>
-                        <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-cog"></i></button>
+                        <NavLink to='/settings/preferences'><button type="button" className="nav-btn mr-3" id=""><i className="fas fa-cog"></i></button></NavLink>
                     </div>
                     <div className="col-1 justify-self-end">
                         <button type="button" className="nav-btn" id=""><i className="fas fa-question-circle"></i></button>

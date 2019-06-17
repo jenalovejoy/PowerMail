@@ -5,6 +5,9 @@ import './css/PowerStyles.css';
 import { InboxPage } from './Components/Inbox.js';
 import { LoginPage } from './Components/Login.js';
 import { ComposePage } from './Components/Compose.js';
+import { SettingsPreferencePage } from './Components/Settings_Preferences.js';
+import { SettingsUserPage } from './Components/Settings_User.js';
+import { SettingsAccountsPage } from './Components/Settings_Accounts.js';
 
 class App extends Component {
   constructor(props) {
@@ -99,13 +102,27 @@ class App extends Component {
         <ComposePage />
       );
     }
+    
+    let renderSettingsPreferences = () => {
+        return(<SettingsPreferencePage />);
+    }
  
+    let renderSettingsAccounts = () => {
+        return(<SettingsAccountsPage />);
+    }
+    
+    let renderSettingsUsers = () => {
+        return(<SettingsUserPage />);
+    }
+    
     return (
       <BrowserRouter>
         <Switch>
-          {/* <Route path='/inbox' component={Inbox} /> */}
           <Route exact path='/' render={renderInboxPage}/>
           <Route path='/compose' render={renderComposePage}/>
+          <Route path='/settings/preferences/' render={renderSettingsPreferences}/>
+          <Route path='/settings/accounts/' render={renderSettingsAccounts}/>
+          <Route path='/settings/user/' render={renderSettingsUsers}/>
         </Switch> 
       </BrowserRouter>
     );
