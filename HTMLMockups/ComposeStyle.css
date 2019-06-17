@@ -1,0 +1,72 @@
+body {
+    background-color: rgb(180, 199, 231);
+    font-family: Veranda, Geneva, sans-serif;
+    color: rgb(32, 56, 100);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(218, 227, 243);
+    border: 1px solid rgb(47, 85, 151);
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    
+}
+
+#buttons {
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.btn {
+    border-radius: 0;
+    height: 50px;
+    width: 150px;
+    color: white;
+    font-size: 18px;
+    background-color: rgb(47, 85, 151);
+    
+}
+
+.btn2 {
+    border-radius: 0;
+    height: 50px;
+    width: 150px;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(60, 100, 140);
+}
+
+#form {
+    font-size: 18px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.submissionfield { 
+    width: 600px; 
+    height: 20px; 
+    border: 1px solid #999999; 
+    padding: 5px; 
+}
+
+#messageBox {
+    width: 800px; 
+    height: 300px; 
+    border: 1px solid #999999; 
+    padding: 5px; 
+}
+
+

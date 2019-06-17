@@ -1,5 +1,5 @@
 PowerMailRead.html
 PowerEmail.css
 /node_modules
-/powermail
-/Server
+/powermail/node_modules
+/Server/node_modules
