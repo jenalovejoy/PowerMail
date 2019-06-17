@@ -8,7 +8,6 @@ var logger = require('morgan');
 
 // var indexRouter = require('./routes/emailstuff');
 var indexRouter = require('./routes/index');
-var emailRouter = require('./routes/emails');
 var imapRouter = require('./routes/imap');
 var smtpRouter = require('./routes/smtp');
 
@@ -32,8 +31,6 @@ app.use('/', indexRouter);
 // });
 
 app.get('/imap', imapRouter); 
-app.post('/emails', emailRouter); 
-
 
 app.post('/smtp', smtpRouter);
 
