@@ -21,7 +21,6 @@ class RefreshBtn extends Component {
         this.props.refreshFunc();
     }
 
-
     render() {
         return (
             <button onClick={this.handleClick} type="button" className="nav-btn mr-3" id="">
@@ -32,7 +31,6 @@ class RefreshBtn extends Component {
 }
 
 class InboxHeader extends Component {
-
     render() {
         return (
             <div className="d-inline-block" id="inbox-header">
@@ -40,7 +38,7 @@ class InboxHeader extends Component {
 
                 <div className="row mt-4 pl-3 pr-2" id="nav-buttons">
                     <div className="col-3 col-lg-2 justify-self-start">
-                        <button type="button" className="nav-btn" id=""><a href="index.html"><i className="fas fa-folder"></i></a></button>
+                        <button type="button" className="nav-btn" id=""><i className="fas fa-folder"></i></button>
                     </div>
                     <div className="col-6 col-lg-6">
                         <RefreshBtn icon="fas fa-sync-alt" refreshFunc={this.props.refreshFunc} />
@@ -52,7 +50,7 @@ class InboxHeader extends Component {
                         <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-times"></i></button>
                     </div>
                     <div className="col-2 col-lg-3">
-                        <button type="button" className="nav-btn mr-3" id=""><a href="index.html"><i className="fas fa-power-off"></i></a></button>
+                        <button type="button" className="nav-btn mr-3" id=""><i className="fas fa-power-off"></i></button>
                         <NavLink to='/settings/preferences'><button type="button" className="nav-btn mr-3" id=""><i className="fas fa-cog"></i></button></NavLink>
                     </div>
                     <div className="col-1 justify-self-end">
@@ -65,10 +63,6 @@ class InboxHeader extends Component {
 }
 
 class InboxBody extends Component {
-    componentDidMount() {
-
-    }
-
     render() {
         return( 
             <div className="row mx-0" id="inbox-body">
@@ -125,25 +119,17 @@ class InboxMessages extends Component {
 
             {emailRows}
             {/* <!-- Today's Emails --> */}
-            {/* <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
-            // <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="1:25 PM"/>
-            // <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="11:25 AM"/> */}
 
             {/* <!-- Yesterday's Emails --> */}
             {/* <div className="row ml-1 list_header mb-2">
                 <div className="font-weight-bold">Yesterday</div>
             </div> */}
             
-            {/* <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/>
-            <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/> */}
             
             {/* <!-- Week's Emails --> */}
             {/* <div className="row ml-1 list_header mb-2">
                 <div className="font-weight-bold">Last Week</div>
             </div> */}
-
-            {/* <EmailRow sender="JohnDoe@gmail.com" subject="Lorem ipsum dolor sit" timeStamp="3:25 PM"/> */}
-            {/* <EmailRow sender="JohnDoe@gmail.com" subject="Hello World" timeStamp="3:25 PM"/> */}
         </div>
         );
     }

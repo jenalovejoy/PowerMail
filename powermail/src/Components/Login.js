@@ -1,33 +1,41 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export class LoginPage extends Component {
     render() {
-
         return (
             <div className="container">
-                <div id="header" class="row justify-content-center align-items-center">
-                    <div class="col">
-                        <div class="logo">power<i><b>mail</b></i></div>
+                <div id="header" className="row justify-content-center align-items-center">
+                    <div className="col">
+                        <div className="logo">power<i><b>mail</b></i></div>
                     </div>
                 </div>
-                <div id="subheader" class="row justify-content-center align-items-center">
-                    <div class="col">
+                <div id="subheader" className="row justify-content-center align-items-center">
+                    <div className="col">
                         <div id="instruction">Log in to an existing account</div>
                     </div>
                 </div>
-                <div id="form" class="row align-items-center justify-content-center">
-                    <div class="form-inline">
-                        <label for="inputsm">username&nbsp;</label>
-                        <input type="text" class="form-control input-sm" id="usernameinput" />
+                <div id="form" className="row mt-4 align-items-center justify-content-center">
+                    <div className="form-inline">
+                        <label form="inputsm">username&nbsp;</label>
+                        <input type="text" className="form-control input-sm" id="usernameinput" />
                     </div>
-                    <div class="form-inline">
-                        <label for="inputsm">password&nbsp;</label>
-                        <input type="password" class="form-control input-sm" id="input-sm" required />
+                    <div className="form-inline">
+                        <label form="inputsm">password&nbsp;</label>
+                        <input type="password" className="form-control input-sm" id="input-sm" required />
                     </div>
                 </div>
-                <div id="buttons" class="row align-items-center justify-content-center">
-                    <div class="col"><button type="button" class="btn" id="GoBackButton"><a href="index.html">Go back</a></button></div>
-                    <div class="col"><LoginButton loginFunc={this.props.loginFunc} /></div>
+                <div id="buttons" className="row align-items-center justify-content-center">
+                    <div className="col">
+                        <NavLink exact to="/">
+                            <button type="button" className="btn" id="GoBackButton">Go back</button>
+                        </NavLink>
+                    </div>
+                    <div className="col">
+                        <NavLink to="/">
+                            <LoginButton loginFunc={this.props.loginFunc} />
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         );
@@ -42,22 +50,8 @@ class LoginButton extends Component {
 
     render() {
         return (
-            <button onClick={this.handleClick} type="button" class="btn" id="LogInButton">Log in</button>
+            <button onClick={this.handleClick} type="button" className="btn" id="LogInButton">Log in</button>
         );
     }
 }
 
-
-// class RegisterButton extends Component {
-//     handleClick = () => {
-//     }
-
-
-//     render() {
-//         return (
-//             <button onClick={this.handleClick} type="button" className="nav-btn mr-3" id="">
-//                 <i className={this.props.icon}></i>
-//             </button>
-//         );
-//     }
-// }

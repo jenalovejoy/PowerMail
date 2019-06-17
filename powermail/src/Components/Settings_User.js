@@ -8,14 +8,18 @@ export class SettingsUserPage extends Component {
                 <div class="d-inline-block" id="inbox-header">
                     <div class="logo mt-2">power<i><b>mail</b></i></div>   
 
-                    <div class="row mt-5" id="nav-buttons">
+                    <div class="row mt-4" id="nav-buttons">
                         <div class="col-3 col-lg-2 justify-self-start">
                         </div>
                         <div class="col-6 col-lg-6">
                         </div>
                         <div class="col-2 col-lg-3">
-                            <button type="button" class="nav-btn mr-3" id=""><a href="index.html"><i class="fas fa-power-off"></i></a></button>
-                            <button type="button" class="nav-btn mr-3" id=""><a href="PowerMailInbox.html"><i class="fas fa-inbox"></i></a></button>
+                            <NavLink exact to='/'>
+                                    <button type="button" class="nav-btn mr-3" id=""><i class="fas fa-power-off"></i></button>
+                            </NavLink>
+                            <NavLink exact to='/'>
+                                <button type="button" class="nav-btn mr-3" id=""><i class="fas fa-inbox"></i></button>
+                            </NavLink>
                         </div>
                         <div class="col-1 justify-self-end">
                             <button type="button" class="nav-btn" id=""><i class="fas fa-question-circle"></i></button>

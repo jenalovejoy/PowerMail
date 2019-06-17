@@ -1,9 +1,12 @@
 import  React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
+// import { BrowserRouter, Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './css/PowerStyles.css';
 
 import { InboxPage } from './Components/Inbox.js';
+import { WelcomePage } from './Components/Welcome.js';
 import { LoginPage } from './Components/Login.js';
+import { RegisterPage } from './Components/Register.js';
 import { ComposePage } from './Components/Compose.js';
 import { SettingsPreferencePage } from './Components/Settings_Preferences.js';
 import { SettingsUserPage } from './Components/Settings_User.js';
@@ -14,7 +17,7 @@ class App extends Component {
     super(props);
     this.state = {
       loginStatus: false,
-      emails: {}
+      emails: {},
     }
   }
 
@@ -30,32 +33,8 @@ class App extends Component {
 
     // this.updateEmails();
 
-    this.logIn();
-
-    // POST testing
-    var fetchBody = {email: 'dn.luu03'}
-
-    fetch('/emails', {
-      method: "POST",
-      body: fetchBody,
-      mode: "cors",
-      headers: {
-        "Content-Type": "text/html"
-      }
-    })
-   
-    .then(res => res.text())
-    
-    .then((data) => {
-      console.log("Data");
-      console.log(data);
-    });
   }
 
-  componentWillUnmount() {
-    // Firebase
-    // this.authUnRegFunc();
-  }
 
   updateEmails() {
     console.log("updateEmails");
@@ -82,9 +61,33 @@ class App extends Component {
   }
 
   render() {  
-    if (!this.state.loginStatus) {
+    let renderWelcomePage = () => {
+      return (
+        <WelcomePage />
+      );
+    }
+ 
+    let renderLoginPage = () => {
       return (
         <LoginPage loginFunc={ this.logIn.bind(this) } />
+      );
+    }
+  
+    let renderRegisterPage = () => {
+      return (
+        <RegisterPage loginFunc={ this.logIn.bind(this) } />
+      );
+    }
+
+    if (!this.state.loginStatus) {
+      return (
+        <BrowserRouter>
+        <Switch>
+          <Route exact path='/' render={renderWelcomePage}/>
+          <Route path='/login' render={renderLoginPage}/>
+          <Route path='/register' render={renderRegisterPage}/>
+        </Switch> 
+      </BrowserRouter>
       );
     }
 
